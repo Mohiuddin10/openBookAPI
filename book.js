@@ -1,9 +1,8 @@
 const loadBook = () => {
     const searchName = document.getElementById('bookName');
     const searchValue = searchName.value;
-    console.log(searchValue);
 
-    fetch('https://openlibrary.org/search.json?q=art+of+war')
+    fetch(`https://openlibrary.org/search.json?q=${searchValue}`)
     .then((response) => response.json())
     .then ((data) => showBook(data))
 };
