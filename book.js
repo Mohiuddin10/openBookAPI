@@ -9,7 +9,11 @@ const loadBook = () => {
 
 
 const showBook =(data) => {
-    const {numFound} = data;
+    const {numFound, docs} = data;
+    const {title} = docs;
+    docs.map((singleTitle) => {console.log(singleTitle.title)});
+    // =========>some other data need to be show 
+    console.log(data);
     
 
     const bookshow = document.getElementById('bookShow');
