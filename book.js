@@ -16,6 +16,7 @@ const showBook =(data) => {
       const bookshow = document.getElementById('bookShow');
     const book = document.createElement('div');
     book.classList.add('col');
+    // =======> need to set border of colume element 
     book.innerHTML = `
     <h3>Title: ${title}</h3>
     <p>Author Name: ${author_name[0]}</p>
