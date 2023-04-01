@@ -10,24 +10,23 @@ const loadBook = () => {
 
 const showBook =(data) => {
     const {numFound, docs} = data;
-    const {title} = docs;
-    docs.map((singleTitle) => {console.log(singleTitle.title)});
-    // =========>some other data need to be show 
-    console.log(data);
-    
-
-    const bookshow = document.getElementById('bookShow');
+    docs.map((singleTitle) => {
+      console.log(singleTitle);
+      const {author_name, title, first_publish_year: fpy, publisher } = singleTitle;
+      const bookshow = document.getElementById('bookShow');
     const book = document.createElement('div');
-    book.classList.add('book-card');
+    book.classList.add('col');
     book.innerHTML = `
-    <div class="card mt-2" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title"> Total number of book found: ${numFound}</h5>
-                  <p class="card-text"></p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
+    <h3>Title: ${title}</h3>
+    <p>Author Name: ${author_name[0]}</p>
+    <p>First Publish: ${fpy}</p>
+    <p>publisher Name: ${publisher[0]}</p>
     `;
     bookshow.appendChild(book);
+    });
+    // =========>some other data need to be show 
+    
+    
+
+    
 };
