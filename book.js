@@ -55,5 +55,28 @@ const loadAuthor = (author_id) => {
  } ;
 
  const showAuthor = (author) => {
-  console.log(author);
- };
+  const {name, birth_date } = author;
+
+
+  
+  const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+
+const alert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML =
+    `   <div>${name}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>';
+
+  alertPlaceholder.append(wrapper)
+}
+
+const alertTrigger = document.getElementById('liveAlertBtn')
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', () => {
+    alert('Nice, you triggered this alert message!', 'success')
+  })
+}
+  
+};
+ 
