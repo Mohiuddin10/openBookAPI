@@ -33,8 +33,39 @@ const showBook =(data) => {
     <p>First Publish: ${fpy}</p>
     <p>Publisher Name: ${publisher[0]}</p>
     <div>
-    <button onclick="loadAuthor('${author}')" type="button" class="btn btn-outline-success" id="liveAlertBtn">Author Details</button>
-    <div id="liveAlertPlaceholder"></div>
+    
+    
+
+<button onclick="loadAuthor('${author}')" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  Button with data-bs-target
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Author Name: ${name}</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
     </div>
     </div>
     `;
@@ -56,22 +87,19 @@ const loadAuthor = (author_id) => {
 
  const showAuthor = (author) => {
   const {name, birth_date } = author;
+  const authorDiv = document.getElementById('authorData');
 
 
   
-const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-const wrapper = document.createElement('div')
-  wrapper.innerHTML =
-    `<h3>Author Name: ${name}</h3>
-    <button onclick="clearAuthor()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
-    
-
-  alertPlaceholder.append(wrapper);
-  
-
-  const clearAuthor = () => {
-    alertPlaceholder.innerHTML = '';
-  };
 };
 
  
+
+
+
+// for author : 
+{/* <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+          Toggle width collapse
+        </button>
+      </p> */}
