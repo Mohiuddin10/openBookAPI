@@ -59,24 +59,19 @@ const loadAuthor = (author_id) => {
 
 
   
-  const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-
-const alert = (message, type) => {
-  const wrapper = document.createElement('div')
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+const wrapper = document.createElement('div')
   wrapper.innerHTML =
-    `   <div>${name}</div>`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>';
+    `<h3>Author Name: ${name}</h3>
+    <button onclick="clearAuthor()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
+    
 
-  alertPlaceholder.append(wrapper)
-}
-
-const alertTrigger = document.getElementById('liveAlertBtn')
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', () => {
-    alert('Nice, you triggered this alert message!', 'success')
-  })
-}
+  alertPlaceholder.append(wrapper);
   
+
+  const clearAuthor = () => {
+    alertPlaceholder.innerHTML = '';
+  };
 };
+
  
