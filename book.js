@@ -34,11 +34,19 @@ const showBook =(data) => {
     <p>Publisher Name: ${publisher[0]}</p>
     <div>
     
-    
 
-<button onclick="loadAuthor('${author}')" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  Button with data-bs-target
-</button>
+
+<p>
+        <button onclick="loadAuthor('${author}')" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Author Data
+        </button>
+</p>
+
+<div class="collapse" id="collapseExample">
+<div class="card card-body">
+  Author Name: ${name}
+</div>
+</div>
 
 
 
