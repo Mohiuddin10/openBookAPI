@@ -42,11 +42,7 @@ const showBook =(data) => {
         </button>
 </p>
 
-<div class="collapse" id="collapseExample">
-<div class="card card-body">
-  Author Name: ${name}
-</div>
-</div>
+
 
 
 
@@ -72,10 +68,11 @@ const loadAuthor = (author_id) => {
  } ;
 
  const showAuthor = (author) => {
-  const {name, birth_date } = author;
-  const authorDiv = document.getElementById('authorData');
+  const {name, birth_date: dob } = author;
+  const authorDiv = document.getElementById('authorArea');
   authorDiv.innerHTML = `
   <h3>${name}</h3>
+  <p>DOB: ${dob} </p>
   `;
 
 
