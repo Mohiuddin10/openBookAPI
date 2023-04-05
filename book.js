@@ -26,7 +26,7 @@ const showBook =(data) => {
     book.innerHTML = `
     <div class="card p-2 ms-3 shadow">
     <div>
-    <img src="https://covers.openlibrary.org/b/id/${pic}-M.jpg" class="card-img-top" alt="no image" />
+    <img src="https://covers.openlibrary.org/b/id/${pic ? pic : 'n/a'}-M.jpg" class="card-img-top" alt="no image" />
     </div>
     <h5 class="card-title">Title: ${title}</h5>
     <p>Author Name: ${author_name[0]}</p>
@@ -68,11 +68,12 @@ const loadAuthor = (author_id) => {
  } ;
 
  const showAuthor = (author) => {
-  const {name, birth_date: dob } = author;
-  const authorDiv = document.getElementById('authorArea');
+  const {name, birth_date: dob, bio } = author;
+  const authorDiv = document.getElementById('authorData');
   authorDiv.innerHTML = `
   <h3>${name}</h3>
-  <p>DOB: ${dob} </p>
+  <p>DOB: ${dob ? dob : "N/A"} </p>
+  <p>BIO: ${bio}</p>
   `;
 
 
@@ -83,25 +84,3 @@ const loadAuthor = (author_id) => {
 
 
 
-// for author : 
-{/* <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Author Name: ${name}</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
-  </div>
-</div> */}
