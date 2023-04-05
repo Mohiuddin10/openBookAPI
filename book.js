@@ -4,7 +4,9 @@ const loadBook = () => {
     if (searchValue === "") {
       document.getElementById('error-message').style.display='block';
     }
-    else {const searchResult = document.getElementById('bookShow');
+    else {
+      document.getElementById('error-message').style.display='none';
+    const searchResult = document.getElementById('bookShow');
     searchResult.innerHTML = '';
 
     fetch(`https://openlibrary.org/search.json?q=${searchValue}`)
@@ -21,6 +23,7 @@ const showBook =(data) => {
     docs.map((singleTitle) => {
       console.log(singleTitle);
       const {author_name, title, first_publish_year: fpy, publisher, cover_i:pic, author_key:author } = singleTitle;
+      const cover_pic = `https://covers.openlibrary.org/b/id/${pic ? pic : '0385472579'}-M.jpg`;
       const bookshow = document.getElementById('bookShow');
       // bookshow.innerHTML = ``;
     const book = document.createElement('div');
@@ -29,7 +32,7 @@ const showBook =(data) => {
     book.innerHTML = `
     <div class="card p-2 ms-3 shadow">
     <div>
-    <img src="https://covers.openlibrary.org/b/id/${pic ? pic : 'n/a'}-M.jpg" class="card-img-top" alt="no image" />
+    <img src="${cover_pic ? cover_pic : cover_erreo}" class="card-img-top" alt="no image" />
     </div>
     <h5 class="card-title">Title: ${title}</h5>
     <p>Author Name: ${author_name[0]}</p>
