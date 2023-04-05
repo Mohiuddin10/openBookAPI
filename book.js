@@ -1,12 +1,15 @@
 const loadBook = () => {
     const searchName = document.getElementById('bookName');
     const searchValue = searchName.value;
-    const searchResult = document.getElementById('bookShow');
+    if (searchValue === "") {
+      document.getElementById('error-message').style.display='block';
+    }
+    else {const searchResult = document.getElementById('bookShow');
     searchResult.innerHTML = '';
 
     fetch(`https://openlibrary.org/search.json?q=${searchValue}`)
     .then((response) => response.json())
-    .then ((data) => showBook(data))
+    .then ((data) => showBook(data))}
 };
 
 
