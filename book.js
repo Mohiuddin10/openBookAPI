@@ -1,4 +1,5 @@
 document.getElementById('error-message').style.display='none';
+document.getElementById('spinner-load').style.display='none';
 const loadBook = () => {
     const searchName = document.getElementById('bookName');
     const searchValue = searchName.value;
@@ -8,6 +9,9 @@ const loadBook = () => {
       document.getElementById('bookNum').innerHTML ='';
     }
     else {
+// if book is search, spinner will appear 
+      document.getElementById('spinner-load').style.display='block';
+      document.getElementById('error-message').style.display='none';
       
     const searchResult = document.getElementById('bookShow');
     searchResult.innerHTML = '';
@@ -19,6 +23,7 @@ const loadBook = () => {
 
 
 const showBook =(data) => {
+  document.getElementById('spinner-load').style.display='none';
   document.getElementById('error-message').style.display='none';
     const {numFound, docs} = data;
     // show number of book found 

@@ -14,9 +14,13 @@
     <div class="book-header">
         <h1>Wlcome to Library</h1>
         <input id="bookName" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        <button onclick="loadBook()" type="button" class="btn btn-outline-dark"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Load Book</button>
+        <button onclick="loadBook()" type="button" class="btn btn-outline-dark">Load Book</button>
+        <!-- spinner section  -->
+        <div id="message" class="d-flex align-items-center justify-content-center">
+            <span id="spinner-load" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         <h5 id="bookNum"></h5>
         <h5 id="error-message" class="text-danger">Please provide a book name</h5>
+        </div>
 
        
 
