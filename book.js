@@ -1,11 +1,14 @@
+document.getElementById('error-message').style.display='none';
 const loadBook = () => {
     const searchName = document.getElementById('bookName');
     const searchValue = searchName.value;
     if (searchValue === "") {
       document.getElementById('error-message').style.display='block';
+      document.getElementById('bookShow').innerHTML = '';
+      document.getElementById('bookNum').innerHTML ='';
     }
     else {
-      document.getElementById('error-message').style.display='none';
+      
     const searchResult = document.getElementById('bookShow');
     searchResult.innerHTML = '';
 
@@ -16,6 +19,7 @@ const loadBook = () => {
 
 
 const showBook =(data) => {
+  document.getElementById('error-message').style.display='none';
     const {numFound, docs} = data;
     // show number of book found 
     const countBook = document.getElementById('bookNum');
